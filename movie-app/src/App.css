@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Core Theme Colors */
+:root {
+  --primary-gradient: linear-gradient(90deg, #9b4dca, #e91e63);
+  --bg-color: #f8f9ff; /* Brighter background from screenshot */
+  --card-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  --button-gradient: linear-gradient(90deg, #4461f2, #9b4dca); /* Button style from image */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: #2d3436;
+}
+
+/* Modern Gradient Navbar */
+.navbar {
+  background: var(--primary-gradient);
+  padding: 12px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(155, 77, 202, 0.2);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* Active Underline for Home (as seen in image) */
+.nav-active {
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+}
+
+/* Themed Search Section */
+.search-container {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.search-container h1 {
+  color: #9b4dca;
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Pill-shaped Search Bar with Shadow */
+.search-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 18px 30px 18px 60px; /* Space for icon */
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  outline: none;
+  transition: 0.3s;
+  color: #636e72;
+}
+
+.search-bar::placeholder {
+  color: #b2bec3;
+}
+
+.search-bar:focus {
+  box-shadow: 0 10px 30px rgba(155, 77, 202, 0.15);
+}
+
+/* Movie Cards Grid */
+.movie-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding: 20px 20px 100px;
+}
+
+/* Card Styling - Wide Format */
+.movie-card {
+  background: white;
+  width: 100%;
+  max-width: 850px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-banner {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+/* Gradients from your screenshot */
+.banner-dark { background: #1e272e; }
+.banner-orange { background: linear-gradient(135deg, #ff9f43, #ee5253); }
+.banner-pink { background: linear-gradient(135deg, #da70d6, #ff69b4); }
+
+.card-content {
+  padding: 25px 35px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-info h3 { 
+  margin: 0; 
+  font-size: 1.6rem; 
+  color: #2d3436;
+}
+
+.card-info p { 
+  margin: 5px 0 0; 
+  color: #636e72; 
+  font-size: 1rem;
+}
+
+.rating { 
+  color: #f1c40f; 
+  font-weight: 600; 
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Themed View Details Button */
+.details-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: var(--button-gradient);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 15px rgba(68, 97, 242, 0.2);
+}
+
+.details-btn:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 20px rgba(68, 97, 242, 0.3);
+}

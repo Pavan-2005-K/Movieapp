@@ -1,0 +1,89 @@
+/* Custom Variables */
+:root {
+  --primary-gradient: linear-gradient(90deg, #9b4dca, #e91e63);
+  --bg-color: #fdf6fb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+}
+
+/* 1. The Gradient Navbar */
+.navbar {
+  background: var(--primary-gradient);
+  padding: 12px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.fav-link {
+  border-bottom: 2px solid white; /* The underline in your screenshot */
+  padding-bottom: 2px;
+}
+
+/* 2. Wide Movie Cards */
+.movie-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+.movie-card {
+  background: white;
+  width: 95%;
+  max-width: 850px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card-banner {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+/* Different Banner Colors */
+.banner-purple { background: linear-gradient(to right, #da70d6, #ff69b4); }
+.banner-blue { background: linear-gradient(to right, #4facfe, #00f2fe); }
+.banner-orange { background: linear-gradient(to right, #ff8c00, #ff4500); }
+
+.card-content {
+  padding: 20px 25px;
+}
+
+.view-details-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #6c5ce7;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 15px;
+}
