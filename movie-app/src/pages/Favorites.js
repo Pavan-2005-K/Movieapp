@@ -20,7 +20,7 @@ function Favorites() {
     <div className="favorites-page">
       <div className="navbar">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span>🎬</span> <h2 style={{margin: 0}}>Movie Explorer</h2>
+           <h2 style={{margin: 0}}>Movie Explorer</h2>
         </div>
         <div className="nav-links">
           <Link to="/">Home</Link>
