@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Filtering logic for search functionality
   const filteredMovies = movieData.filter(movie =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -14,49 +15,58 @@ function Home() {
       {/* Navbar Section */}
       <div className="navbar">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span>🎬</span> <h2 style={{margin: 0}}>Movie Explorer</h2>
+           <h2 style={{margin: 0}}>Movie Explorer</h2>
         </div>
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/favorites">❤️ Favorites (1)</Link>
+          <Link to="/" className="nav-active">Home</Link>
+          <Link to="/favorites">Favorites</Link>
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '50px 20px' }}>
-        <h1 style={{ color: '#9b4dca', fontSize: '3rem' }}>Explore Movies</h1>
-        <input 
-          type="text" 
-          placeholder="Search for movies (e.g., Kantara)..." 
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ width: '60%', padding: '15px 25px', borderRadius: '30px', border: '1px solid #ddd' }}
-        />
+      <div className="search-container">
+        <h1>Explore Movies</h1>
+        <p>Discover amazing films from Indian cinema</p>
+        <div className="search-wrapper">
+          <input 
+            type="text" 
+            className="search-bar"
+            placeholder="Search for movies (e.g., Kantara)..." 
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Movie Grid Section */}
       <div className="movie-grid">
         {filteredMovies.map(movie => (
-          <div key={movie.id} className="movie-card">
-            {/* Top Banner with Icon */}
-            <div className={`card-banner ${movie.bannerClass}`}>
-              {movie.icon}
-            </div>
-            
-            <div className="card-content">
-              <div className="card-header">
-                <div>
-                  <h2 style={{margin: '0 0 5px 0'}}>{movie.title}</h2>
-                  <p style={{margin: 0, color: '#777'}}>{movie.year}</p>
-                </div>
-                <div className="rating-star">
-                  ⭐ {movie.rating}
-                </div>
-              </div>
+          /* Entire Cart is now a Link to MovieDetails */
+          <Link 
+            to={`/movie/${movie.id}`} 
+            key={movie.id} 
+            className="card-link"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className="movie-card">
+              <img 
+                src={movie.posterUrl} 
+                alt={movie.title} 
+                className="card-poster" 
+              />
               
-              <Link to={`/movie/${movie.id}`} className="view-details-btn">
-                View Details
-              </Link>
+              <div className="card-content">
+                <div className="card-header">
+                  <div className="card-info">
+                    <h3>{movie.title}</h3>
+                    <p>{movie.year}</p>
+                  </div>
+                  <div className="rating">
+                    ⭐ {movie.rating}
+                  </div>
+                </div>
+                {/* Button has been removed for a cleaner 'Cart' UI */}
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
